@@ -40,7 +40,7 @@
 
         <fieldset formGroupName="passwordsFld">
             <mat-form-field>
-                <input matInput placeholder="{{ 'start-registration.password' | translate }}" formControlName="password" [attr.maxlength]="maxLngthFld" autocomplete="off">
+                <input type="password" matInput placeholder="{{ 'start-registration.password' | translate }}" formControlName="password" [attr.maxlength]="maxLngthFld" autocomplete="off">
                 <mat-error *ngIf="userForm.get('passwordsFld.password').hasError('required') || 
                                     userForm.get('passwordsFld.password').hasError('pattern') ||
                                     userForm.get('passwordsFld.password').hasError('minlength') ||
@@ -50,7 +50,7 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="{{ 'start-registration.repeat-password' | translate }}" formControlName="repeatPassword" [attr.maxlength]="maxLngthFld" autocomplete="off">
+                <input type="password" matInput placeholder="{{ 'start-registration.repeat-password' | translate }}" formControlName="repeatPassword" [attr.maxlength]="maxLngthFld" autocomplete="off">
                 <mat-error *ngIf="userForm.get('passwordsFld.password').hasError('required') ||
                                     userForm.get('passwordsFld.repeatPassword').hasError('areEqualValidator')">
                                     {{ 'start-registration.check-repeat-password' | translate }}
