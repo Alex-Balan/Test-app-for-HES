@@ -1,0 +1,64 @@
+<div class="wrp-form">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit($event, userForm)">
+        <div class="hdr-form">
+            <div class="name-form">{{ 'start-registration.registration' | translate }}</div>
+            <div class="chng-lng">
+                <button type="button" mat-button class="btn-lng"
+                    *ngFor="let lang of translate.getLangs()"
+                    (click)="onSelect(lang)"
+                    (click)="translate.use(selectedLang)"
+                    [class.btn-lng_active]="lang === selectedLang">
+                    {{ lang }}
+                </button>
+            </div>
+        </div>
+        <mat-form-field>
+            <input type="text" matInput placeholder="{{ 'start-registration.name' | translate }}" formControlName="name" [attr.maxlength]="maxLngthFld">
+            <mat-error *ngIf="userForm.get('name').hasError('required') || 
+                                userForm.get('name').hasError('minlength') ||
+                                userForm.get('name').hasError('maxlength')">
+                                {{ 'start-registration.check-name' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput placeholder="{{ 'start-registration.login' | translate }}" formControlName="login" [attr.maxlength]="maxLngthFld">
+            <mat-error *ngIf="userForm.get('login').hasError('required') || 
+                                userForm.get('login').hasError('minlength') ||
+                                userForm.get('login').hasError('maxlength')">
+                                {{ 'start-registration.check-login' | translate }}
+            </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input type="text" matInput placeholder="{{ 'start-registration.email' | translate }}" formControlName="email" [attr.maxlength]="maxLngthFld">
+            <mat-error *ngIf="userForm.get('email').hasError('required') || 
+                                userForm.get('email').hasError('pattern')">
+                                {{ 'start-registration.check-email' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <fieldset formGroupName="passwordsFld">
+            <mat-form-field>
+                <input matInput placeholder="{{ 'start-registration.password' | translate }}" formControlName="password" [attr.maxlength]="maxLngthFld" autocomplete="off">
+                <mat-error *ngIf="userForm.get('passwordsFld.password').hasError('required') || 
+                                    userForm.get('passwordsFld.password').hasError('pattern') ||
+                                    userForm.get('passwordsFld.password').hasError('minlength') ||
+                                    userForm.get('passwordsFld.password').hasError('maxlength')">
+                                    {{ 'start-registration.check-password' | translate }}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="{{ 'start-registration.repeat-password' | translate }}" formControlName="repeatPassword" [attr.maxlength]="maxLngthFld" autocomplete="off">
+                <mat-error *ngIf="userForm.get('passwordsFld.password').hasError('required') ||
+                                    userForm.get('passwordsFld.repeatPassword').hasError('areEqualValidator')">
+                                    {{ 'start-registration.check-repeat-password' | translate }}
+                </mat-error>
+            </mat-form-field>
+        </fieldset>
+        <div class="btn-controls">
+            <button type="submit" mat-button color="primary">{{ 'start-registration.next' | translate }}</button>
+        </div>
+    </form>
+</div>

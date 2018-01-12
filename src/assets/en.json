@@ -1,0 +1,21 @@
+{
+    "start-registration": {
+        "registration": "Registration",
+        "name": "Name",
+        "login": "Login",
+        "email": "E-mail",
+        "password": "Password",
+        "repeat-password": "Repeat password",
+        "next": "Next",
+        "check-name": "Required field and must contain from 4 to 30 characters",
+        "check-login": "Required field and must contain from 4 to 30 characters",
+        "check-email": "Required field and must match the format xxxx@xxxx.xxxx in Latin",
+        "check-password": "Required field and must include at least one number, the letter of upper and lower case in the Latin alphabet, contain from 8 to 30 characters",
+        "check-repeat-password": "Required field, passwords must match"
+    },
+    "success-registration": {
+        "confirmation": "Confirmation",
+        "text-msg": "Welcome",
+        "go-to-registration": "Go to registration"
+    }
+}

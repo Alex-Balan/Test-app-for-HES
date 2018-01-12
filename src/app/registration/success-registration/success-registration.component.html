@@ -1,0 +1,20 @@
+<div class="wrp-form">
+  <form>
+    <div class="hdr-form">
+      <div class="name-form">{{ 'success-registration.confirmation' | translate }}</div>
+      <div class="chng-lng">
+        <button type="button" mat-button class="btn-lng"
+                *ngFor="let lang of translate.getLangs()"
+                (click)="onSelect(lang)"
+                (click)="translate.use(selectedLang)"
+                [class.btn-lng_active]="lang === selectedLang">
+                {{ lang }}
+        </button>
+      </div>
+    </div>
+    <div class="text-msg">{{ 'success-registration.text-msg' | translate }}, {{ nameUser }}</div>
+    <div class="btn-controls">
+        <button type="button" class="btn-go-back" mat-button color="primary" (click)="goBack()">{{ 'success-registration.go-to-registration' | translate }}</button>
+    </div>
+  </form>
+</div>

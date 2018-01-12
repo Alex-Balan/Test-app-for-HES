@@ -1,0 +1,48 @@
+.wrp-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    border: 1px solid rgba(0,0,0,.03);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+.hdr-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    color: rgba(0, 0, 0, .5);
+}
+.btn-lng {
+    min-width: auto;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .05);
+    line-height: normal;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .7);
+    vertical-align: top;
+}
+.btn-lng_active {
+    background-color: rgba(103, 58, 183, .2);
+}
+.text-msg {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .7);
+}
+.btn-controls {
+    margin-top: 20px;
+}
+.btn-go-back {
+    display: block;
+    border: 1px solid rgba(103, 58, 183, .3);
+}
